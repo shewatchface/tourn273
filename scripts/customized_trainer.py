@@ -327,7 +327,7 @@ def set_generation_config(model_name, model):
         if model_name in ERROR_GENERATION_CONFIG_MODELS:
             model.generation_config = GenerationConfig(temperature=None, top_p=None)
     except:
-        print(f"Error setting generation config for model {model_name}")
+        print(f"Error setting generation config for model {model_name}", flush=True)
         pass
 
 
@@ -336,7 +336,7 @@ def resize_if_needed(model_name, model, token_nums):
         if model_name in MIS_MATCH_VOCAB_SIZE_MODELS:
             model.resize_token_embeddings(token_nums)
     except:
-        print(f"Error resizing token embeddings for model {model_name}")
+        print(f"Error resizing token embeddings for model {model_name}", flush=True)
         pass
 
 
